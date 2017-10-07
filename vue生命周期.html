@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue生命周期</title>
+</head>
+<body>
+
+<div id="app">{{a}}
+    <input type="button"value="11110" @click="fn"></div>
+</body>
+</html>
+<script src="vue.js"></script>
+<script src="vue-resource.js"></script>
+<script>
+var vm= new Vue({
+    el:'#app',
+    data:{
+        a:1
+    },
+    methods:{
+        fn(){
+            this.a=2;
+        }
+    },
+    beforeCreate(){
+        console.log('创建前');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    created(){
+        console.log('创建完成');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    beforeMount(){
+        console.log('挂载前');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    mounted(){
+        console.log('创建完成');
+    console.log(this.$el);
+    console.log(this.a);
+    },
+    beforeUpdate(){
+        console.log('更新数据前');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    updated(){
+        console.log('更新数据后');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    beforeDestroy(){
+        console.log('销毁前');
+        console.log(this.$el);
+        console.log(this.a);
+    },
+    destryed(){
+        console.log('销毁后');
+        console.log(this.$el);
+        console.log(this.a);
+    }
+
+})
+
+
+</script>
