@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <parent></parent>
+</div>
+    <template id="kk">
+        <div>
+            <div>parent</div>
+            <child></child>
+            <child2></child2>
+        </div>
+
+    </template>
+
+
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    var vm= new Vue({
+        el:'#app',
+        components:{
+            parent:{
+                template:'#kk',
+                components:{
+                    child:{
+                        template:'<div>child' +
+                        '<h1>sdfdfdf</h1>' +
+                        '</div>'
+
+                    },
+                    child2:{
+                        template:'<div>child2</div>'
+                    }
+
+
+                }
+            }
+        }
+    })
+</script>

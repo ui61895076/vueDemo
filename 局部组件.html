@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <mydiv></mydiv>
+</div>
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            name:11
+        },
+        components:{
+            mydiv:{
+                template:'<h1>dfdfdf{{msg}}</h1>',
+                data(){
+                    return{
+                        msg:'2'
+                    }
+                }
+            }
+        }
+    })
+</script>
