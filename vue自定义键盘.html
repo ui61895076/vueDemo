@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="app"  @keydown.f1="fn">111111111111</input>
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    Vue.config.keyCodes.f1=112;
+    var vm=new Vue({
+        el:'#app',
+        methods:{
+            fn(){
+                alert(11)
+            }
+        }
+    })
+</script>

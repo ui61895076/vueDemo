@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="app" v-fs="fontSize">{{msg}}</div>
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    Vue.directive('fs',function(el,binding){
+        el.style.fontSize=binding.value
+    })
+    var vm= new Vue({
+        el:'#app',
+        data:{
+            fontSize:'40px',
+            msg:'hello'
+        }
+    })
+</script>
