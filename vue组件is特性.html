@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<button @click='com="hello1"'>1</button>
+			<button @click='com="hello2"'>2</button>
+			<component :is='com'>
+				
+			</component>
+		</div>
+		<template id="a">
+			<div>hello1</div>
+			
+		</template>
+		<template id="b">
+			<div>hello2</div>
+		</template>
+	</body>
+</html>
+<script src="vue2.js"></script>
+<script>
+	var vm= new Vue({
+		el:'#app',
+		data:{
+			com:'hello1'
+		},
+		components:{
+			hello1:{
+				template:"#a"
+			},
+			hello2:{
+				template:"#b"
+			}
+		}
+	})
+</script>
