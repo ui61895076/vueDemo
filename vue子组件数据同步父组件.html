@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<comhead></comhead>
+		</div>
+		<template id="tem1">
+			<div>
+				<h1>
+					我是父组件{{name.name}}{{age}}
+				    <comchild :names='name' @s='ages'>我是子组件</comchild>
+				</h1>
+				
+			</div>
+		</template>
+		<template id="child">
+			<p @click='mm' >我是子组件{{age}}{{names.name}}</p>
+		</template>
+	</body>
+</html>
+<script src="vue2.js"></script>
+<script>
+Vue.component('comchild',{
+	template:'#child',
+	props:['names'],
+	data(){
+		return {age:22232}
+	},
+	
+	methods:{
+		mm(){
+			this.names.name='ooo'
+		this.$emit('s',this.age)
+	    }
+		
+	}
+})
+	var vm= new Vue({
+		el:'#app',
+		components:{
+			comhead:{
+				template:'#tem1',
+				data(){
+					return {name:{name:"yhb1"},age:null}
+				},
+				methods:{
+					ages(data){
+						this.age=data
+					}
+				}
+			}
+		}
+	})
+</script>

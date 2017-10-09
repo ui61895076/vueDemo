@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<comhead></comhead>
+		</div>
+		<template id="tem1">
+			<div>
+				<h1>
+					我是父组件{{name}}
+				    <comchild :name='name'>我是子组件</comchild>
+				</h1>
+				
+			</div>
+		</template>
+		<template id="child">
+			<p>我是子组件{{name}}</p>
+		</template>
+	</body>
+</html>
+<script src="vue2.js"></script>
+<script>
+Vue.component('comchild',{
+	template:'#child',
+	props:['name']
+})
+	var vm= new Vue({
+		el:'#app',
+		components:{
+			comhead:{
+				template:'#tem1',
+				data(){
+					return {name:"yhb1"}
+				}
+			}
+		}
+	})
+</script>
